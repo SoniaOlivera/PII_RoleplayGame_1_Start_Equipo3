@@ -36,9 +36,9 @@ namespace Library
                 return HP;
             }
         //Necesito chequear esto con el equipo
-        public void SetHP(int)
+        public void SetHP(int HP)
         {
-            this.HP = int;
+            this.HP = HP;
         }    
     }
 }
