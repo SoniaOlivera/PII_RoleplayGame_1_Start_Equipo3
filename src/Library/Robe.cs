@@ -2,7 +2,7 @@ using System;
 
 namespace Library
 {
-    public class Staff
+    public class Robe
     {
         private string name;
         private int damage;
@@ -14,7 +14,7 @@ namespace Library
         public int HealingPower;
 
 
-        public Staff (string name, int damage, int armor, int healingPower)
+        public Robe (string name, int damage, int armor, int healingPower)
         {
             this.Name = name;
             this.Damage = damage;

@@ -8,10 +8,10 @@ namespace Library
         private int damage;
         private int armor;
         private int healingPower;
-        public string Name {get;}
-        public int Damage {get;}
-        public int Armor {get;}
-        public int HealingPower {get;}
+        public string Name;
+        public int Damage;
+        public int Armor;
+        public int HealingPower;
 
 
         public Spell (string name, int damage, int armor, int healingPower)
