@@ -33,19 +33,21 @@ namespace Library
         }   
         public void RemoveBow()
         {
-
+            this.weapon = null;
         }  
         public void ChangeBow(Bow newbow)
         {
-
+            this.RemoveBow();
+            this.weapon = newbow;
         }
         public void RemoveShield()
         {
-
+            this.armor = null;
         }
         public void ChangeShield(Shield newshield)
         {
-
+            this.RemoveShield();
+            this.weapon = newshield;
         }
         public void AttackDwarf(Dwarf target)
         {
