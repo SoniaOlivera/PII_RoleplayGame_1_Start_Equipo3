@@ -16,7 +16,6 @@ namespace Library
             this.Name = name;
             this.SpellList = spellList;
         }
-        //Es Necesario chequear esta solución con el equipo
         public void AddSpell(Spell Spell)
         {
             SpellList.Add(Spell);
