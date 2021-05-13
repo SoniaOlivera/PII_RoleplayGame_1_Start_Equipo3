@@ -17,43 +17,40 @@ namespace Library
             this.SpellList = spellList;
         }
         //Es Necesario chequear esta solución con el equipo
-        public void AddSpell(Spell)
+        public void AddSpell(Spell Spell)
         {
             SpellList.Add(Spell);
         }
-        public void RemoveSpell(Spell)
+        public void RemoveSpell(Spell Spell)
         {
             SpellList.Remove(Spell);
         }
-        public int damagetotal;
+        public int damagetotal = 0;
         public int GetDamage()
         {
-            foreach (Spell spell in this.SpellList)
+            foreach (Spell Spell in this.SpellList)
             {
-                damagetotal = 0;
-                damagetotal = damagetotal + Spell.GetDamage(Spell);
-                return damagetotal;
+                damagetotal = damagetotal + Spell.GetDamage();
             }
+            return damagetotal;
         }
-        public int armortotal;
+        public int armortotal = 0;
         public int GetArmor()
         {
-            foreach (Spell spell in this.SpellList)
+            foreach (Spell Spell in this.SpellList)
             {
-                armortotal = 0;
-                armortotal = armortotal + Spell.GetArmor(Spell);
-                return armortotal;
+                armortotal = armortotal + Spell.GetArmor();
             }
+            return armortotal;
         }
-        public int healingPowertotal;
+        public int healingPowertotal = 0;
         public int GetHealingPower()
         {
-            foreach (Spell spell in this.SpellList)
+            foreach (Spell Spell in this.SpellList)
             {
-                healingPowertotal = 0;
-                healingPowertotal = healingPowertotal + Spell.GetHealingPower(Spell);
-                return healingPowertotal;
+                healingPowertotal = healingPowertotal + Spell.GetHealingPower();
             }
+            return healingPowertotal;
         }
     }
 }
