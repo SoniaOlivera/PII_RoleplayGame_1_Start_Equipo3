@@ -47,7 +47,7 @@ namespace Library
         public void ChangeShield(Shield newshield)
         {
             this.RemoveShield();
-            this.weapon = newshield;
+            this.armor = newshield;
         }
         public void AttackDwarf(Dwarf target)
         {
