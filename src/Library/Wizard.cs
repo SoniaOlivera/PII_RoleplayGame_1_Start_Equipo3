@@ -33,12 +33,20 @@ namespace Library
         }
         public int GetHP()
             {
-                return HP;
+                return this.HP;
             }
         public void SetHP(int HP)
         {
-            this.HP = HP;
-        }    
+            if (HP >= 0)
+            {
+                this.HP = HP;
+            }
+            else
+            {
+                this.HP = 0;
+            }
+            
+        }     
         public void RemoveStaff()
         {
             this.Weapon = null;
@@ -83,15 +91,24 @@ namespace Library
         }
         public void AttackElf(Elf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.BaseAttackPower - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
+            if ((target.GetDefense() - this.baseAttackPower - this.Armor.GetDamage() - this.Weapon.GetDamage())  - this.SpellBook.GetDamage() < 0 && target.GetHP() > 0)
+            {
+                target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
+            }
         }
         public void AttackDwarf(Dwarf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.BaseAttackPower - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
+            if ((target.GetDefense() - this.baseAttackPower - this.Armor.GetDamage() - this.Weapon.GetDamage())  - this.SpellBook.GetDamage() < 0 && target.GetHP() > 0)
+            {
+                target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
+            }
         }
         public void AttackWizard(Wizard target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.BaseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
+            if ((target.GetDefense() - this.baseAttackPower - this.Armor.GetDamage() - this.Weapon.GetDamage())  - this.SpellBook.GetDamage() < 0 && target.GetHP() > 0)
+            {
+                target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
+            }
         }
     }
 }
