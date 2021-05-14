@@ -17,7 +17,7 @@ namespace Library.Test
         this.dwarfAxe = new Axe("Dorada", 10, 0);
         this.dwarfChestplate = new Chestplate("Malla Plata", 0, 10);
         this.dwarf1 = new Dwarf("Kili", 100, dwarfAxe, dwarfChestplate, 20, 15, 50);
-        this.dwarf2 = new Dwarf("Thorin", 50, dwarfAxe, dwarfChestplate, 10, 20, 500);
+        this.dwarf2 = new Dwarf("Thorin", 50, dwarfAxe, dwarfChestplate, 50, 20, 500);
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace Library.Test
         public void TestAttackDwarf()//Probamos que el método para atacar a otro enano funcione correctamente
         {
             dwarf2.AttackDwarf(dwarf1);
-            Assert.AreEqual(105, dwarf1.GetHP());
+            Assert.AreEqual(65, dwarf1.GetHP());
         }
         [Test]
         public void TestHealDwarf()//Probamos que el método para curar otro enano este ok

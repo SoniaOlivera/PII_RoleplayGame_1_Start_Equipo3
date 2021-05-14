@@ -53,15 +53,24 @@ namespace Library
         }
         public void AttackDwarf(Dwarf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage());
+             if ((target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage()) < 0 && target.GetHP() > 0)
+             {
+                target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage());
+             }
         }
         public void AttackElf(Elf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage());
+            if ((target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage()) < 0 && target.GetHP() > 0)
+            {
+                target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage());
+            }
         }
         public void AttackWizard(Wizard target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage());
+             if ((target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage()) < 0 && target.GetHP() > 0)
+             {
+                target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage());
+             }
         }
         public void HealDwarf(Dwarf target)
         {
