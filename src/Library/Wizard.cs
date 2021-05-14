@@ -14,8 +14,8 @@ namespace Library
         private int baseHealingPower;
         public string Name;
         public int HP;
-        public Staff Weapon;
-        public Robe Armor;
+        public Staff Weapon {get;set;}
+        public Robe Armor {get;set;}
         public SpellBook SpellBook;
         public int BaseAttackPower;
         public int BaseDefensePower;
@@ -39,27 +39,27 @@ namespace Library
         {
             this.HP = HP;
         }    
-        private void RemoveStaff()
+        public void RemoveStaff()
         {
-            this.weapon = null;
+            this.Weapon = null;
         }
         public void ChangeStaff(Staff newstaff)
         {
             this.RemoveStaff();
-            this.weapon = newstaff;
+            this.Weapon = newstaff;
         }
         public void RemoveRobe()
         {
-            this.armor = null;
+            this.Armor = null;
         }
         public void ChangeRobe(Robe newrobe)
         {
             this.RemoveRobe();
-            this.armor = newrobe;
+            this.Armor = newrobe;
         }
-         public int GetDefense()
+        public int GetDefense()
         {
-            return (this.baseDefensePower + this.weapon.GetArmor() + this.armor.GetArmor() + this.SpellBook.GetArmor());
+            return (this.BaseDefensePower + this.Weapon.GetArmor() + this.Armor.GetArmor() + this.SpellBook.GetArmor());
         }
         public void LearnSpell(Spell spell)
         {
@@ -71,27 +71,27 @@ namespace Library
         }
         public void HealWizard(Wizard target)
         {
-            target.SetHP(target.GetHP() + this.baseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
+            target.SetHP(target.GetHP() + this.BaseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
         }
         public void HealElf(Elf target)
         {
-            target.SetHP(target.GetHP() + this.baseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
+            target.SetHP(target.GetHP() + this.BaseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
         }
         public void HealDwarf(Dwarf target)
         {
-            target.SetHP(target.GetHP() + this.baseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
+            target.SetHP(target.GetHP() + this.BaseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
         }
         public void AttackElf(Elf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower - this.weapon.GetDamage() - this.SpellBook.GetDamage());
+            target.SetHP(target.GetHP() + target.GetDefense() - this.BaseAttackPower - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
         }
         public void AttackDwarf(Dwarf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower - this.weapon.GetDamage() - this.SpellBook.GetDamage());
+            target.SetHP(target.GetHP() + target.GetDefense() - this.BaseAttackPower - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
         }
         public void AttackWizard(Wizard target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.armor.GetDamage() - this.weapon.GetDamage() - this.SpellBook.GetDamage());
+            target.SetHP(target.GetHP() + target.GetDefense() - this.BaseAttackPower -this.Armor.GetDamage() - this.Weapon.GetDamage() - this.SpellBook.GetDamage());
         }
     }
 }
