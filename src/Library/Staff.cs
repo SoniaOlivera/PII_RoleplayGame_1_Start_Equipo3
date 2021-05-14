@@ -1,5 +1,5 @@
 using System;
-
+/*La clase Staff es la que debe conocer su nombre, poder de ataque defensa y cura por lo tanto cumple expert. Por otro lado cumple SRP ya que su unico motivo de cambio seria que cambie la forma en que se compone un Staff*/
 namespace Library
 {
     public class Staff

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using Library;
 
+/*La clase SpellBook es la que debe conocer su nombre y lista de hechizos por lo tanto cumple expert. Por otro lado cumple SRP ya que su unico motivo de cambio seria que cambie la forma en que se compone un Axe*/
+
 namespace Library
 {
     public class SpellBook
