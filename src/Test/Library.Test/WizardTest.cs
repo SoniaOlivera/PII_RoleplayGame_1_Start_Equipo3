@@ -75,7 +75,7 @@ namespace Library.Test
         public void TestAttackWizard()
         {
             Saruman.AttackWizard(Gandalf);
-            Assert.AreEqual(85, Gandalf.GetHP());
+            Assert.AreEqual(100, Gandalf.GetHP());
         }
         [Test]
         public void TestHealWizard()
