@@ -59,31 +59,39 @@ namespace Library
         }
          public int GetDefense()
         {
-            return (this.baseDefensePower + this.weapon.GetArmor() + this.armor.GetArmor());
+            return (this.baseDefensePower + this.weapon.GetArmor() + this.armor.GetArmor() + this.SpellBook.GetArmor());
+        }
+        public void LearnSpell(Spell spell)
+        {
+            SpellBook.AddSpell(spell);
+        }
+        public void ForgetSpell(Spell spell)
+        {
+            SpellBook.RemoveSpell(spell);
         }
         public void HealWizard(Wizard target)
         {
-            target.SetHP(target.GetHP() + this.baseHealingPower);
+            target.SetHP(target.GetHP() + this.baseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
         }
         public void HealElf(Elf target)
         {
-            target.SetHP(target.GetHP() + this.baseHealingPower);
+            target.SetHP(target.GetHP() + this.baseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
         }
         public void HealDwarf(Dwarf target)
         {
-            target.SetHP(target.GetHP() + this.baseHealingPower);
+            target.SetHP(target.GetHP() + this.baseHealingPower + this.SpellBook.GetHealingPower() + this.Weapon.GetHealingPower() + this.Armor.GetHealingPower());
         }
         public void AttackElf(Elf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower - this.weapon.GetDamage());
+            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower - this.weapon.GetDamage() - this.SpellBook.GetDamage());
         }
         public void AttackDwarf(Dwarf target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower - this.weapon.GetDamage());
+            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower - this.weapon.GetDamage() - this.SpellBook.GetDamage());
         }
         public void AttackWizard(Wizard target)
         {
-            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.armor.GetDamage() - this.weapon.GetDamage());
+            target.SetHP(target.GetHP() + target.GetDefense() - this.baseAttackPower -this.armor.GetDamage() - this.weapon.GetDamage() - this.SpellBook.GetDamage());
         }
     }
 }
