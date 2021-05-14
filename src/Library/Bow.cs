@@ -1,4 +1,5 @@
 using System;
+/*La clase Bow es la que debe conocer su nombre, poder de ataque y defensa por lo tanto cumple expert. Por otro lado cumple SRP ya que su unico motivo de cambio seria que cambie la forma en que se compone un Bow*/
 
 namespace Library
 {
